@@ -1,0 +1,1 @@
+export function loadContactContent() {console.log('called contact.js')}
