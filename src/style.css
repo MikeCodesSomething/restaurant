@@ -4,22 +4,29 @@
 
 #content {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('./restaurant.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
-.container {
+#container {
     width: min(90%, 600px);
     height: min(90%, 800px);
-    background-color: hsla(0, 0%, 0%, 0.6);    
+    background-color: hsla(0, 0%, 0%, 0.7);    
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 100px;
 }
 
 .tab-container {
+    margin-top: 100px;
     display:flex;
     justify-content: center;
     gap: 5px;
@@ -28,9 +35,25 @@
 .tab {
     border: 1px solid white;
     padding: 10px 20px;
-    background-color: hsla(0, 0%, 0%, 0.6);
+    background-color: hsla(0, 0%, 0%, 0.7);
 }
 
 .tab.active {
     border-bottom: none;
+}
+
+.info-box {
+    width: 70%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+
+}
+
+.sub-title {
+    align-self: flex-start;
+    margin: 5px;
 }

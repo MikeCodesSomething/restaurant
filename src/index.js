@@ -18,11 +18,13 @@ homeTab.addEventListener('click', loadHomeContent);
 
 const menuTab = createElementInDOM('div', tabContainer, 'tab', 'menu-tab');
 menuTab.textContent = "Menu"
+menuTab.addEventListener('click', wipeContent);
 menuTab.addEventListener('click', loadMenuContent);
 
 
 const contactTab = createElementInDOM('div', tabContainer, 'tab', 'contact-tab');
 contactTab.textContent = "Contact"
+contactTab.addEventListener('click', wipeContent);
 contactTab.addEventListener('click', loadContactContent);
 
 //Add a container for our content
