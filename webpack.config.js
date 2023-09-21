@@ -24,7 +24,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       favicon: "./src/fish.png",
-      title: "Mike's Mackerel"
+      title: "Mike's Mackerel",
+      
   })  
   ]
 };
