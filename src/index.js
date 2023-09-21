@@ -6,25 +6,26 @@ import { loadHomeContent } from "./home.js";
 import { loadMenuContent } from "./menu.js";
 import { loadContactContent } from "./contact";
 
-const content = document.getElementById("content");
+//Create an overall content container at the top level of the body
+const content = createElementInDOM('div', null, null, 'content');
 
 //Add tabs for navigation
 const tabContainer = createElementInDOM('div', content, 'tab-container');
 
-const homeTab = createElementInDOM('div', tabContainer, 'tab', 'home-tab');
+const homeTab = createElementInDOM('button', tabContainer, 'tab', 'home-tab');
 homeTab.textContent = "Home";
-homeTab.addEventListener('click', wipeContent);
+homeTab.addEventListener('click', switchTab);
 homeTab.addEventListener('click', loadHomeContent);
 
-const menuTab = createElementInDOM('div', tabContainer, 'tab', 'menu-tab');
+const menuTab = createElementInDOM('button', tabContainer, 'tab', 'menu-tab');
 menuTab.textContent = "Menu"
-menuTab.addEventListener('click', wipeContent);
+menuTab.addEventListener('click', switchTab);
 menuTab.addEventListener('click', loadMenuContent);
 
 
-const contactTab = createElementInDOM('div', tabContainer, 'tab', 'contact-tab');
+const contactTab = createElementInDOM('button', tabContainer, 'tab', 'contact-tab');
 contactTab.textContent = "Contact"
-contactTab.addEventListener('click', wipeContent);
+contactTab.addEventListener('click', switchTab);
 contactTab.addEventListener('click', loadContactContent);
 
 //Add a container for our content
@@ -41,9 +42,19 @@ loadHomeContent();
 
 
 //Functions
-function wipeContent() {
+
+function switchTab(event) {
+    
+    //Wipe the container
     container.replaceChildren();
-    console.log("container content wiped")
+    
+    //Remove active tab class
+    homeTab.classList.remove('active');
+    menuTab.classList.remove('active');
+    contactTab.classList.remove('active');
+
+    //Set selected tab to active
+    event.target.classList.add('active');
 }
 
 // debugger;

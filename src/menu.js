@@ -3,9 +3,12 @@ import { createElementInDOM } from "./createElementInDOM.js";
 //Used to load menu-tab content into a container
 
 
-export function loadMenuContent() {
-     //Identify the container
-     const container = document.getElementById('container')
+export function loadMenuContent(event) {
+    //Set Menu tab to active
+    event.target.classList.add('active');
+    
+    //Identify the container
+    const container = document.getElementById('container')
 
     //Create heading
     const headline = createElementInDOM('h1',container,'headline');

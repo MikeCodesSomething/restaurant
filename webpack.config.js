@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -20,4 +21,10 @@ module.exports = {
   },
   mode: 'development',
   devtool: 'inline-source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      favicon: "./src/fish.png",
+      title: "Mike's Mackerel"
+  })  
+  ]
 };
